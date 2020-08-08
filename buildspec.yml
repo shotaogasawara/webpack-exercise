@@ -7,6 +7,9 @@ phases:
   build:
     commands:
        - pwd
+       - ls .git
+       - git status
+       - git branch
        - git log
        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
   post_build:
