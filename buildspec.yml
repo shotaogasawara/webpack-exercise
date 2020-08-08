@@ -1,16 +1,14 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - git log
   pre_build:
     commands:
       - echo "pre_build"
   build:
     commands:
+       - pwd
+       - git log
        - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
-      #  - RAILS_ENV=staging bundle exec rails runner "Tasks::MigrationChecker.warn_delete_migration" -e staging
   post_build:
     commands:
       - echo "post build"
